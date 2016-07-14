@@ -27,13 +27,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!--webfont-->
     <link href='//fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Dorsa' rel='stylesheet' type='text/css'>
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="{% static "js/jquery-1.11.1.min.js" %}"></script>
     <!-- start menu -->
-    <link href="css/megamenu.css" rel="stylesheet" type="text/css" media="all" />
-    <script type="text/javascript" src="js/megamenu.js"></script>
+    <link href="{% static "css/megamenu.css" %}" rel="stylesheet" type="text/css" media="all" />
+    <script type="text/javascript" src="{% static "js/megamenu.js" %}"></script>
     <script>$(document).ready(function () { $(".megamenu").megamenu(); });</script>
-    <script src="js/jquery.easydropdown.js"></script>
-    <script src="js/simpleCart.min.js"> </script>
+    <script src="{% static "js/jquery.easydropdown.js" %}"></script>
+    <script src="{% static "js/simpleCart.min.js" %}"> </script>
 </head>
 <body>
     <div class="banner">
@@ -42,7 +42,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 <div class="header_top_left">
                     <div class="box_11">
                         <a href="checkout.html">
-                            <h4><p>Carrito: $0 CLP (0 Productos)</p><img src="images/bag.png" alt="" /><div class="clearfix"> </div></h4>
+                            <h4><p>Carrito: $0 CLP (0 Productos)</p><img src="{% static "images/bag.png" %}" alt="" /><div class="clearfix"> </div></h4>
                         </a>
                     </div>
                     <p class="empty"><a href="javascript:;" class="simpleCart_empty">Carrito vacío</a></p>
@@ -50,8 +50,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
                 <div class="header_top_right">
 
-                    <script src="js/classie1.js"></script>
-                    <script src="js/uisearch.js"></script>
+                    <script src="{% static "js/classie1.js" %}"></script>
+                    <script src="{% static "js/uisearch.js" %}"></script>
                     <script>
                         new UISearch(document.getElementById('sb-search'));
                     </script>
@@ -63,134 +63,15 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             <div class="header_bottom">
                 <div class="logo">
                     <h1><a href="index.html"><span class="m_1">W</span>atches</a></h1>
-                    <h1><a href="index.html"><span class="m_1">C</span>lothing</a></h1>
-                    <h1><a href="index.html"><span class="m_1">A</span>ccessories</a></h1>
                 </div>
                 <div class="menu">
                     <ul class="megamenu skyblue">
+                        
+                    {% for categoria in categorias %}
                         <li>
-                            <a class="color2" href="men.html">Masculino</a>
-                            <div class="megapanel">
-                                <div class="row">
-                                    <div class="col1">
-                                        <div class="h_nav">
-
-                                            <ul>
-                                                <li><a href="men.html">Relojes</a></li>
-                                                <li><a href="men.html">Relojes Deportivos</a></li>
-                                                <li><a href="men.html">Chaquetas</a></li>
-                                                <li><a href="men.html">Jeans</a></li>
-                                                <li><a href="men.html">Poleras</a></li>
-                                                <li><a href="men.html">Accesorios</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="col2">
-                                        <div class="h_nav">
-                                            <h4>TENDENCIAS</h4>
-                                            <ul>
-                                                <li class>
-                                                    <div class="p_left">
-                                                        <img src="images/p1.jpg" class="img-responsive" alt="" />
-                                                    </div>
-                                                    <div class="p_right">
-                                                        <h4><a href="#">Reloj Gold </a></h4>
-                                                        <span class="item-cat"><small><a href="#">Reloj</a></small></span>
-                                                        <span class="price">$ 18.990</span>
-                                                    </div>
-                                                    <div class="clearfix"> </div>
-                                                </li>
-                                                <li>
-                                                    <div class="p_left">
-                                                        <img src="images/p2.jpg" class="img-responsive" alt="" />
-                                                    </div>
-                                                    <div class="p_right">
-                                                        <h4><a href="#">Reloj Sport</a></h4>
-                                                        <span class="item-cat"><small><a href="#">Reloj</a></small></span>
-                                                        <span class="price">$ 20.990</span>
-                                                    </div>
-                                                    <div class="clearfix"> </div>
-                                                </li>
-                                                <li>
-                                                    <div class="p_left">
-                                                        <img src="images/p3.jpg" class="img-responsive" alt="" />
-                                                    </div>
-                                                    <div class="p_right">
-                                                        <h4><a href="#">Reloj Digital</a></h4>
-                                                        <span class="item-cat"><small><a href="#">Reloj</a></small></span>
-                                                        <span class="price">$ 39.990</span>
-                                                    </div>
-                                                    <div class="clearfix"> </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            <a class="color2" href="men.html">{{categoria.name}}</a>
                         </li>
-                        <li>
-                            <a class="color4" href="women.html">FEMENINO</a>
-                            <div class="megapanel">
-                                <div class="row">
-                                    <div class="col1">
-                                        <div class="h_nav">
-                                            <ul>
-                                                <li><a href="men.html">Relojes</a></li>
-                                                <li><a href="men.html">Vestidos</a></li>
-                                                <li><a href="men.html">Carteras</a></li>
-                                                <li><a href="men.html">Jeans</a></li>
-                                                <li><a href="men.html">Blusas</a></li>
-                                                <li><a href="men.html">Zapatos</a></li>
-                                                <li><a href="men.html">Accesorios</a></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-
-                                    <div class="col2">
-                                        <div class="h_nav">
-                                            <h4>TENDENCIAS</h4>
-                                            <ul>
-                                                <li class>
-                                                    <div class="p_left">
-                                                        <img src="images/p1.jpg" class="img-responsive" alt="" />
-                                                    </div>
-                                                    <div class="p_right">
-                                                        <h4><a href="#">Reloj Gold </a></h4>
-                                                        <span class="item-cat"><small><a href="#">Reloj</a></small></span>
-                                                        <span class="price">$ 18.990</span>
-                                                    </div>
-                                                    <div class="clearfix"> </div>
-                                                </li>
-                                                <li>
-                                                    <div class="p_left">
-                                                        <img src="images/p2.jpg" class="img-responsive" alt="" />
-                                                    </div>
-                                                    <div class="p_right">
-                                                        <h4><a href="#">Reloj Sport</a></h4>
-                                                        <span class="item-cat"><small><a href="#">Reloj</a></small></span>
-                                                        <span class="price">$ 20.990</span>
-                                                    </div>
-                                                    <div class="clearfix"> </div>
-                                                </li>
-                                                <li>
-                                                    <div class="p_left">
-                                                        <img src="images/p3.jpg" class="img-responsive" alt="" />
-                                                    </div>
-                                                    <div class="p_right">
-                                                        <h4><a href="#">Reloj Digital</a></h4>
-                                                        <span class="item-cat"><small><a href="#">Reloj</a></small></span>
-                                                        <span class="price">$ 39.990</span>
-                                                    </div>
-                                                    <div class="clearfix"> </div>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </li>
-                        <li class="active grid"><a class="color3" href="single.html">Ofertas</a></li>
+                    {% endfor %}
                         <div class="clearfix"> </div>
                     </ul>
                 </div>
@@ -199,47 +80,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         </div>
     </div>
     <div class="main">
-        <div class="container">
-            <ul class="content-home">
-                <li class="col-sm-4">
-                    <a href="single.html" class="item-link" title="">
-                        <div class="bannerBox">
-                            <img src="images/w1.jpg" class="item-img" title="" alt="" width="100%" height="100%">
-                            <div class="item-html">
-                                <h3>RELOJES<span>DE PLATA</span></h3>
-                                <p>Elegancia ante todo.</p>
-                                <button>Comprar ahora!</button>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="col-sm-4">
-                    <a href="single.html" class="item-link" title="">
-                        <div class="bannerBox">
-                            <img src="images/w3.jpg" class="item-img" title="" alt="" width="100%" height="100%">
-                            <div class="item-html">
-                                <h3>RELOJES<span>DIGITALES</span></h3>
-                                <p>Comodidad y simpleza.</p>
-                                <button>Comprar ahora!</button>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <li class="col-sm-4">
-                    <a href="single.html" class="item-link" title="">
-                        <div class="bannerBox">
-                            <img src="images/w2.jpg" class="item-img" title="" alt="" width="100%" height="100%">
-                            <div class="item-html">
-                                <h3>RELOJES<span>DEPORTIVOS</span></h3>
-                                <p>Resistente al agua.</p>
-                                <button>Comprar ahora!</button>
-                            </div>
-                        </div>
-                    </a>
-                </li>
-                <div class="clearfix"> </div>
-            </ul>
-        </div>
         <div class="middle_content">
             <div class="container">
                 <h2>BIENVENIDOS</h2>
@@ -256,7 +96,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="view view-first">
                                     <div class="inner_content clearfix">
                                         <div class="product_image">
-                                            <div class="mask1"><img src="images/m4.jpg" alt="image" class="img-responsive zoom-img"></div>
+                                            <div class="mask1"><img src="{% static "images/m4.jpg" %}" alt="image" class="img-responsive zoom-img"></div>
                                             <div class="mask">
                                                 <div class="info">Vista rápida</div>
                                             </div>
@@ -279,7 +119,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                                 <div class="view view-first">
                                     <div class="inner_content clearfix">
                                         <div class="product_image">
-                                            <div class="mask1"><img src="images/m2.jpg" alt="image" class="img-responsive zoom-img"></div>
+                                            <div class="mask1"><img src="{% static "images/m2.jpg" %}" alt="image" class="img-responsive zoom-img"></div>
                                             <div class="mask">
                                                 <div class="info">Vista rápida</div>
                                             </div>
