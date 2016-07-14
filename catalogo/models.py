@@ -8,7 +8,7 @@ class Categoria(models.Model):
     description = models.TextField(blank=True,null=True)
     banner = models.ImageField(upload_to='static/images/banner_categories',blank=True,null=True)
     sort_order = models.IntegerField(default=0)
-
+    status = models.BooleanField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -33,7 +33,7 @@ class Producto(models.Model):
     marca = models.ForeignKey(Marca)
     category = models.ForeignKey(Categoria)
     image = models.ImageField(upload_to='static/images/data',blank=True,null=True)
-
+    status = models.BooleanField()
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 

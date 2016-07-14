@@ -17,6 +17,6 @@ def single(request,sku):
 
 def categoria(request,id):
     categorias = Categoria.objects.order_by('-name')
-    productos = Producto.objects.filter(category_id=id)
+    productos = Producto.objects.filter(category_id=id, status=1)
 
     return render(request, 'categoria.html', {'productos':productos,'categorias':categorias })

@@ -4,10 +4,10 @@ from catalogo.models import Categoria, Producto, Marca
 
 
 class CategoriaAdmin(admin.ModelAdmin):
-    list_display = ('name','sort_order','created_at','updated_at')
+    list_display = ('name','sort_order','status','created_at','updated_at')
 
 class ProductoAdmin(admin.ModelAdmin):
-    list_display = ('name','sku','price','category','created_at','updated_at',)
+    list_display = ('name','sku','price','category','status','created_at','updated_at',)
 
 class MarcaAdmin(admin.ModelAdmin):
     list_display = ('name','created_at','updated_at',)    
